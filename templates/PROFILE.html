@@ -1,0 +1,84 @@
+<!doctype html>
+
+<head>
+    <title>COVID-19 APP </title>
+    <style>
+        header {
+  width: 100%;
+  border: 2px solid black;
+        }
+
+        .button {
+  background-color:#02A0C7;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  
+  background-color: #02A0C7;
+  color: white;
+}
+   
+        </style>
+</head>
+
+<body>
+    
+    <img src="{{url_for('static', filename='logocooper.jpg')}}" />
+    
+    <center><B><u>COVID19 TOOL</u></B> </center>
+    <b>
+
+    
+   
+    {{ list_email }}
+ 
+ 
+    
+    </b>
+    <a href="{{ url_for('LOGIN') }}"><button>LOGOUT</button></a>
+    <br/><br/>
+    <header>
+        <b>Instructions :- </b>
+        <br/>
+        <ul>
+      <li>Upload the png's along with the txt's using the UI . </li>
+    <li>Make sure that the name of the png's and txt's are same . </li>
+    <li>Click the Start button after the upload is complete <div class=""></div></li>
+       </ul>
+        </header>
+        <br>
+        <center>
+<form method="post" enctype="multipart/form-data">
+    <input type="file" class="button" name="file" multiple/>
+    <input type="submit" class="button" value="Start"/>
+</form>
+</center>
+
+
+</body>
+</html>
